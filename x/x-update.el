@@ -1,0 +1,11 @@
+(defun x/update ()
+  (interactive)
+  (let ((default-directory dotfiles-dir)
+        (buf (get-buffer-create "*xin-emacs update*")))
+    (switch-to-buffer-other-window buf)
+    (shell-command "git pull --ff-only --stat" buf)
+    (end-of-buffer)
+    (insert "\nRun `M-x x/select-modules' to review and install new modules.\n")
+    (local-set-key (kbd "q") 'quit-window)))
+
+(provide 'x-update)
