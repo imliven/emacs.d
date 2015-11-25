@@ -21,13 +21,4 @@
 (global-set-key (kbd "C-M-=") (lambda () (interactive)
                                 (x-fonts/update-font-size 1)))
 
-;; Setting English Font
-(set-face-attribute 'default nil :font "Menlo 16")
-
-;; Chinese Font
-(dolist (charset '(kana han symbol cjk-misc bopomofo))
-  (set-fontset-font (frame-parameter nil 'font)
-                    charset (font-spec :family "Hiragino Sans GB"
-                                       :size 16)))
-
 (provide 'x-fonts)

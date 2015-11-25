@@ -5,8 +5,8 @@
 (package-require 'projectile)
 (projectile-global-mode)
 
-;; Use C-c C-f to find a file anywhere in the current project.
-(global-set-key (kbd "C-c C-f") 'projectile-find-file)
+;; Use C-c C-p to find a file anywhere in the current project.
+(global-set-key (kbd "C-c C-p") 'projectile-find-file)
 
 
 

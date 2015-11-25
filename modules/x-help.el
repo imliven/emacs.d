@@ -15,6 +15,8 @@
 ;; an orange D. Turn this off to avoid confusion.
 (setq-default which-key-special-keys nil)
 
+;; Display help infomation in the minibuffer
+(which-key-setup-minibuffer)
 
 
 ;; Get an instant cheat sheet for your current major mode
