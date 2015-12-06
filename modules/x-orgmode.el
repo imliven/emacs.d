@@ -41,7 +41,7 @@
       org-tags-column 80)
 
 (setq org-capture-templates
-      `(("t" "todo" entry (file "")  ; "" => org-default-notes-file
+      `(("t" "todo" entry (file "~/org/gtd/refile.org")  ; "" => org-default-notes-file
          "* NEXT %?\n%U\n" :clock-resume t)
         ("n" "note" entry (file "")
          "* %? :NOTE:\n%U\n%a\n" :clock-resume t)
@@ -196,5 +196,47 @@
      (sql . nil)
      (sqlite . t))))
 
+
+;; Org mode project
+(require 'ox-publish)
+(setq org-publish-project-alist
+      '(
+        ("blog-notes"
+         :base-directory "~/org/notes/"
+         :base-extension "org"
+         :publishing-directory "~/org/html/"
+         :recursive t
+         :publishing-function org-html-publish-to-html
+         :headline-levels 2
+         :section-numbers nil
+         :auto-preamble t
+         :auto-sitemap t                ; Generate sitemap.org automagically...
+         :sitemap-filename "blog.org"  ; ... call it sitemap.org (it's the default)...
+         :sitemap-title "blog"
+         :sitemap-file-entry-format "%d %t"
+         :author "Liven"
+         :email "hi at liven dot im"
+         )
+        ("blog-static"
+         :base-directory "~/org/notes/"
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf"
+         :publishing-directory "~/org/html/"
+         :recursive t
+         :publishing-function org-publish-attachment
+         )
+        ("scp"
+         :base-directory "~/org/html/"
+         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|html"
+         :publishing-directory "/ssh:web@liven.im:~/blog"
+         :publishing-function org-publish-attachment)
+
+        ("blog" :components ("blog-notes" "blog-static"))
+        ("website" :components ("blog" "scp"))
+        ;;
+        ))
+
+;; auto wrap line
+(add-hook 'org-mode-hook
+  (lambda () (setq truncate-lines nil)))
 
 (provide 'x-orgmode)

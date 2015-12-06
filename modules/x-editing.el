@@ -113,5 +113,15 @@
 (volatile-highlights-mode t)
 
 
+;; Chinese quote
+(defun x-char/insert-chinese-quote ()
+  "Insert Chinese quote."
+  (interactive)
+  (insert "「」")
+  (backward-char 1))
+
+(global-set-key (kbd "C-{") 'x-char/insert-chinese-quote)
+
+
 
 (provide 'x-editing)

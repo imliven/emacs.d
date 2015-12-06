@@ -35,6 +35,7 @@
 ;; (x-elixir "Elixir language support" :optional)
 ;; (x-haskell "Haskell language support" :optional)
 ;; (x-flow "the Flow type checker for JS" :optional)
+;; (x-youdao "Youdao dictionary" :optional)
    ))
 
 (require 'cl)
