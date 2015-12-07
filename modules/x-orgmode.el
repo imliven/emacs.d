@@ -43,7 +43,7 @@
 (setq org-capture-templates
       `(("t" "todo" entry (file "~/org/gtd/refile.org")  ; "" => org-default-notes-file
          "* NEXT %?\n%U\n" :clock-resume t)
-        ("n" "note" entry (file "")
+        ("n" "note" entry (file "~/org/memo/refile.org")
          "* %? :NOTE:\n%U\n%a\n" :clock-resume t)
         ))
 
