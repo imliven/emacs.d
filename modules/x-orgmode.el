@@ -214,6 +214,9 @@
          :sitemap-filename "blog.org"  ; ... call it sitemap.org (it's the default)...
          :sitemap-title "blog"
          :sitemap-file-entry-format "%d %t"
+         :sitemap-date-format "%Y%m"
+         :sitemap-sort-files "anti-chronologically"
+         :sitemap-function org-publish-my-sitemap
          :author "Liven"
          :email "hi at liven dot im"
          )
@@ -224,15 +227,7 @@
          :recursive t
          :publishing-function org-publish-attachment
          )
-        ("scp"
-         :base-directory "~/org/html/"
-         :base-extension "css\\|js\\|png\\|jpg\\|gif\\|pdf\\|mp3\\|ogg\\|swf\\|html"
-         :publishing-directory "/ssh:web@liven.im:~/blog"
-         :publishing-function org-publish-attachment)
-
         ("blog" :components ("blog-notes" "blog-static"))
-        ("website" :components ("blog" "scp"))
-        ;;
         ))
 
 ;; auto wrap line
