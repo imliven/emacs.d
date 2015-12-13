@@ -158,3 +158,6 @@ Default for SITEMAP-FILENAME is `sitemap.org'."
 (setq org-html-preamble "<div class=\"preamble\">
 <div id=\"header\"><a href=\"/\">Liven.im</a></div>
 </div>")
+
+(setq org-html-head-extra "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\"/>
+")
