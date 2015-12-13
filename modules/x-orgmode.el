@@ -212,7 +212,7 @@
          :auto-preamble t
          :auto-sitemap t                ; Generate sitemap.org automagically...
          :sitemap-filename "blog.org"  ; ... call it sitemap.org (it's the default)...
-         :sitemap-title "blog"
+         :sitemap-title "Blog"
          :sitemap-file-entry-format "%d %t"
          :sitemap-date-format "%Y%m"
          :sitemap-sort-files "anti-chronologically"
