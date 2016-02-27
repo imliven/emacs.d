@@ -215,7 +215,7 @@
          :sitemap-title "Blog"
          :sitemap-file-entry-format "%d %t"
          :sitemap-date-format "%Y%m"
-         :sitemap-sort-files "anti-chronologically"
+         :sitemap-sort-files anti-chronologically
          :sitemap-function org-publish-my-sitemap
          :author "Liven"
          :email "hi at liven dot im"
